@@ -32,7 +32,7 @@ class SplashContent extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.all(18),
+          margin: EdgeInsets.all(10),
           child: Text(
             subtitle,
             textAlign: TextAlign.center,

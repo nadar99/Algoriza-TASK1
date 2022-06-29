@@ -78,12 +78,25 @@ class _BodyState extends State<Body> {
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 50),
-            child: Text(
-              "Don't have an account? Sign Up",
-              style: TextStyle(
-                fontSize: 18,
-              ),
+            margin: EdgeInsets.only(bottom: 50),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an account?",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  " Sign Up",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.blue,
+                  ),
+                ),
+              ],
             ),
           )
         ],
