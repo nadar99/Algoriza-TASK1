@@ -14,13 +14,10 @@ class FormFooter extends StatelessWidget {
     return Column(
       children: [
         Padding(padding: const EdgeInsets.only(top: 8), child: linkTextWidget),
-        SizedBox(
-          height: 20,
-        ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
-            "using application according to policy rules, any kind of violations will be subjected to sanctions",
+            this.footerText,
             style: TextStyle(color: Colors.grey, fontSize: 15),
             textAlign: TextAlign.center,
           ),

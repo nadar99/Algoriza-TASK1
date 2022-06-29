@@ -1,6 +1,8 @@
+import 'package:algoriza_task1/screens/components/link-text.dart';
 import 'package:algoriza_task1/screens/components/splash-button.dart';
 import 'package:algoriza_task1/screens/components/splash-content.dart';
 import 'package:algoriza_task1/screens/login-screen.dart';
+import 'package:algoriza_task1/screens/register-screen.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
@@ -41,7 +43,9 @@ class _BodyState extends State<Body> {
                 background: Colors.orange.shade50,
                 raduis: 15,
                 padding: 15,
-                onPress: () {},
+                onPress: () {
+                  Navigator.pushNamed(context, LoginScreen.routeName);
+                },
               ),
             ),
           ),
@@ -78,25 +82,10 @@ class _BodyState extends State<Body> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 50),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Don't have an account?",
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-                Text(
-                  " Sign Up",
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.blue,
-                  ),
-                ),
-              ],
+            child: LinkText(
+              text: "Don't have an account?",
+              link: " Sign Up",
+              routName: RegisterScreen.routeName,
             ),
           )
         ],

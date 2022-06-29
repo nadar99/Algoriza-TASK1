@@ -3,13 +3,12 @@ import 'package:algoriza_task1/screens/components/form-footer.dart';
 import 'package:algoriza_task1/screens/components/form-title.dart';
 import 'package:algoriza_task1/screens/components/header.dart';
 import 'package:algoriza_task1/screens/components/link-text.dart';
-import 'package:algoriza_task1/screens/components/splash-button.dart';
-import 'package:algoriza_task1/screens/register-screen.dart';
+import 'package:algoriza_task1/screens/login-screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
-class LoginScreen extends StatelessWidget {
-  static String routeName = "/login";
+class RegisterScreen extends StatelessWidget {
+  static String routeName = "/register";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +21,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                flex: 3,
+                flex: 1,
                 child: Header(),
               ),
               Expanded(
@@ -40,13 +39,33 @@ class LoginScreen extends StatelessWidget {
                       children: [
                         FormTitle(
                           title1: "Welcome to fashion daily",
-                          title2: "Sign in",
+                          title2: "Register",
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 8),
+                          padding: const EdgeInsets.symmetric(vertical: 4),
+                          child: Text(
+                            "Email",
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        TextField(
+                          decoration: new InputDecoration(
+                            hintText: "Eg: example@email.com",
+                            border: new OutlineInputBorder(),
+                            contentPadding: EdgeInsets.all(8),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 6,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 4),
                           child: Text(
                             "Phone Number",
                             style: TextStyle(
@@ -57,21 +76,41 @@ class LoginScreen extends StatelessWidget {
                         ),
                         InternationalPhoneNumberInput(
                           hintText: "Eg: 1008546978",
+                          inputBorder: OutlineInputBorder(),
+                          selectorButtonOnErrorPadding: 8,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4),
+                          child: Text(
+                            "Password",
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        TextField(
+                          obscureText: true,
+                          decoration: new InputDecoration(
+                            hintText: "Eg: example@email.com",
+                            border: new OutlineInputBorder(),
+                            contentPadding: EdgeInsets.all(8),
+                          ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         FormButtons(
-                          buttonText: "Sign In",
+                          buttonText: "Register",
                         ),
                         FormFooter(
                           linkTextWidget: LinkText(
-                            text: "Doesn't has any account?",
-                            link: " Register here",
-                            routName: RegisterScreen.routeName,
+                            text: "has any account?",
+                            link: " Sign in here",
+                            routName: LoginScreen.routeName,
                           ),
                           footerText:
-                              "using application according to policy rules, any kind of violations will be subjected to sanctions",
+                              "By registering your account, you are agree to our terms and conditions",
                         )
                       ],
                     ),

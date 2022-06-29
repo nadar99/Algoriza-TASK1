@@ -1,3 +1,5 @@
+import 'package:algoriza_task1/screens/login-screen.dart';
+import 'package:algoriza_task1/screens/register-screen.dart';
 import 'package:flutter/material.dart';
 
 class LinkText extends StatelessWidget {
@@ -5,8 +7,10 @@ class LinkText extends StatelessWidget {
     Key key,
     this.link,
     this.text,
+    this.routName,
   }) : super(key: key);
-  final String text, link;
+  final String text, link, routName;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,11 +23,16 @@ class LinkText extends StatelessWidget {
             fontSize: 18,
           ),
         ),
-        Text(
-          link,
-          style: TextStyle(
-            fontSize: 18,
-            color: Colors.blue,
+        TextButton(
+          onPressed: () {
+            Navigator.pushNamed(context, routName);
+          },
+          child: Text(
+            link,
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.blue,
+            ),
           ),
         ),
       ],
